@@ -92,7 +92,7 @@ function questionLoop() {
     
     //get rid of start button
     
-    //started timer 
+    //start timer (function)
     
     //put first question on the page 
     
@@ -101,6 +101,12 @@ function questionLoop() {
 }
 
 //on click event with question function inside with if/else inside
+$(document).on("click", "#start-button", function() {
+    $("#start-button").hide();
+    
+
+
+})
 
 //if/else for each question
     //if they get right answer
