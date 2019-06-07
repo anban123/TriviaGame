@@ -9,13 +9,16 @@
 
 //3 options: right answer, wrong answer, run out of time(wrong answer)
 
-//Variables
-var correctAnswers;
-var wrongAnswers; 
-var timer;
+//Global Variables
+var correctAnswers = 0;
+var wrongAnswers = 0;
+var timeOutAnswer = 0; 
+var timer = 25;
+var userGuess = "";
+var answered = false;         //track if user answers or not
     
 
-//question, 4 choices, correct answer - ca same as one of the choices
+//trivia questions
 $(document).ready(function () {
 
 var questions = [                   //declare an object, inside objects are key value pairs
@@ -36,7 +39,7 @@ var questions = [                   //declare an object, inside objects are key 
     answers: ["Abu", "Rajah", "Lago", "Gazeem", "Jafar"],
     correctAnswer: "Rajah",
     image: "images/jasmine-rajah8.png"
-}  
+},  
 {
     question: "What was the name of the elephant Dumbo was based off of?",
     answers: ["Bob", "Barnum", "Tuft", "Jumbo"],
@@ -53,6 +56,22 @@ function reset() {       //or reset function
 }
 reset();
 
+//timer run function
+    //if it's running then... if it's not running then...
+
+//timer countdown function
+    //clock decrement every second with timer--?
+
+//timer stop function
+    //make running false?
+    //clear the clock
+
+//display question function 
+    //randomly pick question from array if not already shown
+    //display question and loop through with possible answers
+    //array = Math.floor(Math.random() * questions.length)  &  pick = questions[array]??
+
+
 
 //function to loop through questions
 function questionLoop() {
@@ -63,7 +82,7 @@ function questionLoop() {
     
     //put first question on the page 
     
-    //possible answers which are clickable (buttons) 
+    //possible answers which are clickable (buttons)
     
 }
 
