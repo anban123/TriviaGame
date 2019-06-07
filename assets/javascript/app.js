@@ -10,10 +10,9 @@
 //3 options: right answer, wrong answer, run out of time(wrong answer)
 
 //Variables
-    //questions
-    //answers 
-    //timer
-    //images
+var correctAnswers;
+var wrongAnswers; 
+var timer;
     
 
 //question, 4 choices, correct answer - ca same as one of the choices
@@ -21,25 +20,36 @@ $(document).ready(function () {
 
 var questions = [                   //declare an object, inside objects are key value pairs
 {
-    question: "What color is the sky?",
-    answers: ["red", "blue", "green", "yellow"],
-    correctAnswer: "blue",
-   // image: //path to source
+    question: "In Peter Pan, Captain Hook had a hook on which one of his hands?",
+    answers: ["left", "right"],
+    correctAnswer: "left",
+    image: "images/captainHook.jpg"
 },
 {
-    question: "What color is the sun?",
-    answers: ["yellow", "purple", "pink", "green"],
-    correctAnswers: "yellow",
-   // image: 
+    question: "How did Walt’s Brother Roy propose to his wife Edna?",
+    answers: ["by telegraph", "via email", "by letter", "with fireworks",],
+    correctAnswers: "by telegraph",
+    image: "images/royDisney.jpg"
+},
+{
+    question: "In Aladdin, what is the name of Jasmine’s pet tiger?",
+    answers: ["Abu", "Rajah", "Lago", "Gazeem", "Jafar"],
+    correctAnswer: "Rajah",
+    image: "images/jasmine-rajah8.png"
+}  
+{
+    question: "What was the name of the elephant Dumbo was based off of?",
+    answers: ["Bob", "Barnum", "Tuft", "Jumbo"],
+    correctAnswer: "Jumbo",                       //super sad story :(
+    image: "images/jumbo.jpg"                     //lots of appending
+
 }  
 ]
 
 //start button
 function reset() {       //or reset function
     var startButton = $("<button type='button'> start </button>");
-    //$("#start-button").html(startButton);
     $("#start-button").append(startButton);
-    
 }
 reset();
 
