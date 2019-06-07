@@ -15,7 +15,7 @@ var wrongAnswers = 0;
 var timeOutAnswer = 0; 
 var timer = 25;
 var userGuess = "";
-var answered = false;         //track if user answers or not
+var answered = false;                    //track if user answers or not                          
     
 
 //trivia questions
@@ -26,27 +26,41 @@ var questions = [                   //declare an object, inside objects are key 
     question: "In Peter Pan, Captain Hook had a hook on which one of his hands?",
     answers: ["left", "right"],
     correctAnswer: "left",
-    image: "images/captainHook.jpg"
+    image: "assets/images/captainHook.jpg"
 },
 {
     question: "How did Walt’s Brother Roy propose to his wife Edna?",
     answers: ["by telegraph", "via email", "by letter", "with fireworks",],
     correctAnswers: "by telegraph",
-    image: "images/royDisney.jpg"
+    image: "assets/images/royDisney.jpg"
 },
 {
     question: "In Aladdin, what is the name of Jasmine’s pet tiger?",
     answers: ["Abu", "Rajah", "Lago", "Gazeem", "Jafar"],
     correctAnswer: "Rajah",
-    image: "images/jasmine-rajah8.png"
+    image: "assets/images/jasmine-rajah8.png"
 },  
 {
     question: "What was the name of the elephant Dumbo was based off of?",
     answers: ["Bob", "Barnum", "Tuft", "Jumbo"],
     correctAnswer: "Jumbo",                       //super sad story :(
-    image: "images/jumbo.jpg"                     //lots of appending
+    image: "assets/images/jumbo.jpg"                     //lots of appending
 
-}  
+},
+{
+    question: "What was the first fairy tale that Walt Disney made a cartoon about?",
+    answers: ["Little Red Riding Hood", "Bambi", "Little Mermaid", "Snow White"],
+    correctAnswer: "Little Red Riding Hood",                       
+    image: "assets/images/lrrh.jpg"                     
+
+},  
+{
+    question: "What was the name of the whale in Pinocchio?",
+    answers: ["Samuel", "Gigantor", "Monstro", "Willy"],
+    correctAnswer: "Monstro",                       
+    image: "assets/images/whale.jpg"                     
+
+}    
 ]
 
 //start button
