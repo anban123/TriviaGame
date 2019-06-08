@@ -1,8 +1,8 @@
 /* Homework Due 6.10.19 */
 
-header {
-    background-image: url("assets/images/cinderellaBanner.jpg")
-}
+/* header {
+    background-image: url("../images/cinderellaBanner.jpg")
+} */
 
 h1 {
     font-size: 80px;
@@ -18,6 +18,18 @@ h1 {
 }
 
 #start-button {
+    text-align: center;
+}
+
+#timer {
+    text-align: center;
+}
+
+.theQuestions {
+    text-align: center;
+}
+
+#answer-choices {
     text-align: center;
 }
 
