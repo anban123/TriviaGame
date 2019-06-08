@@ -15,7 +15,8 @@ var wrongAnswers = 0;
 var timeOutAnswer = 0; 
 var timer = 25;
 var userGuess = "";
-var answered = false;                    //track if user answers or not                          
+var answered = false; 
+var i =0;                   //track if user answers or not                          
     
 
 //trivia questions
@@ -23,7 +24,7 @@ $(document).ready(function () {
 
 var questions = [                   //declare an object, inside objects are key value pairs
 {
-    question: "In Peter Pan, Captain Hook had a hook on which one of his hands?",
+    question: "In Peter Pan, Captain Hook had a hook on which one of his hands?",//question[0].question
     answers: ["left", "right"],
     correctAnswer: "left",
     image: "assets/images/captainHook.jpg"
@@ -89,24 +90,69 @@ reset();
 
 //function to loop through questions
 function questionLoop() {
+        $(".theQuestions").empty();
+        $(".theAnswers").empty();
+        
+        var showQuestion = $("<p>" + questions[i].question + "</p>");  //how to dig deeper in the array?
+        showQuestion.addClass("theQuestions");
+        //showQuestion.attr("loopQuestions", Math.floor(Math.random() * questions.length));
+        $("#trivia-questions").append(showQuestion);
+        
+        for (var j = 0; j < questions[i].answers.length; j++) {
+        var showAnswers = $("<button>" + questions[i].answers[j] + "</button>");
+        showAnswers.addClass("theAnswers");
+        showAnswers.attr("Value", questions[i].answers[j]);
+        showAnswers.attr("rightAnswer", questions[i].correctAnswer);
+        $("#answer-choices").append(showAnswers);
+        console.log(this);
+        //
+    }
+
+    }
+
+    //when user clicks on an answer
+$("#answer-choices").on("click",".theAnswers", function() {
+
+    console.log($(this).attr('Value'),$(".theAnswers").attr("rightAnswer"));
+
+    var userGuess = $(this).attr('Value');
+    var rightGuess = $(".theAnswers").attr("rightAnswer");
+
+    if (userGuess === rightGuess) {
+        alert("Right Answer!")
+        i++;
+        questionLoop();
+    } else if (userGuess != rightGuess) {
+        alert("Wrong Answer!");
+        i++;
+        questionLoop();
+    }
     
-    //get rid of start button
+
+});
+    
+    
     
     //start timer (function)
     
-    //put first question on the page 
     
-    //possible answers which are clickable (buttons)
     
-}
-
-//on click event with question function inside with if/else inside
+    //i =0
+    
+    
+    //on click event with question function inside with if/else inside
 $(document).on("click", "#start-button", function() {
+        //get rid of start button
     $("#start-button").hide();
-    
+        
+        //put first question on the page 
+    questionLoop();
+        
+        //possible answers which are clickable (buttons)
+        
 
 
-})
+});
 
 //if/else for each question
     //if they get right answer
