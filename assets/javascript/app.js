@@ -102,19 +102,18 @@ $(document).ready(function () {
 
         $(".theQuestions").empty();
         $("#answer-choices").empty();
+
         var showQuestion = $("<p>" + questions[i].question + "</p>");  
         showQuestion.addClass("theQuestions");
         $("#trivia-questions").append(showQuestion);
 
-        for (var j = 0; j < questions[i].answers.length; j++) {                      
+         for (var j = 0; j < questions[i].answers.length; j++) {                      
             var showAnswers = $("<button>" + questions[i].answers[j] + "</button>");
             showAnswers.addClass("theAnswers");
             showAnswers.attr("Value", questions[i].answers[j]);
             showAnswers.attr("rightAnswer", questions[i].correctAnswer);
             $("#answer-choices").append(showAnswers);    
-            
-            
-        }
+         }
     }
 
     //when user clicks on an answer
