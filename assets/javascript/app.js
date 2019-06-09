@@ -1,33 +1,23 @@
 //Homework Due 6.10.19
 
-//start screen content
 
-//when user presses start button:
-//starts a timer
-//gives a question
-//gives options(buttons)
 
-//3 options: right answer, wrong answer, run out of time(wrong answer)
-
-//Global Variables
+//Variables
 var correctAnswers = 0;
 var wrongAnswers = 0;
 var timeOutAnswer = 0;
 var timer = 25;
-
-
 var timeDec;
 var userGuess = "";
 var answered = false;
 var i = 0;
-
 
 //trivia questions
 $(document).ready(function () {
 
     var questions = [                   //declare an object, inside objects are key value pairs
         {
-            question: "In Peter Pan, Captain Hook had a hook on which one of his hands?",//question[0].question
+            question: "In Peter Pan, Captain Hook had a hook on which one of his hands?",   //question[0].question
             answers: ["left", "right"],
             correctAnswer: "left",
             image: "assets/images/captainHook.jpg"
@@ -35,7 +25,7 @@ $(document).ready(function () {
         {
             question: "How did Walt’s Brother Roy propose to his wife Edna?",
             answers: ["by telegraph", "via email", "by letter", "with fireworks",],
-            correctAnswers: "by telegraph",
+            correctAnswer: "by telegraph",
             image: "assets/images/royDisney.jpg"
         },
         {
@@ -68,12 +58,13 @@ $(document).ready(function () {
     ]
 
     //start button
-    function reset() {       //or reset function
+    function start() {                                                    //or reset function
         var startButton = $("<button type='button'> start </button>");
         $("#start-button").append(startButton);
     }
-    reset();
+    start();
     
+    //makes clock count down
     function decrement() {
         timer--;
         $("#timer").text(timer);
@@ -86,6 +77,7 @@ $(document).ready(function () {
         }
     }
 
+    //resets the timer
     function resetTimer() {
         clearInterval(timeDec);
         timer = 25;
@@ -94,39 +86,20 @@ $(document).ready(function () {
         questionLoop();
     }
     
+    //start button click event, hides start button and instructions, starts trivia questions
     $(document).on("click", "#start-button", function () {
-        //get rid of start button
         $("#start-button").hide();
         $("#instructions").hide();
-        
         timeDec = setInterval(decrement, 1000);
-       
         decrement();
-
         questionLoop();
         
         
     });
 
-    //timer run function
-    //if it's running then... if it's not running then...
-
-
-    //timer stop function
-    //make running false?
-    //clear the clock
-
-    //display question function 
-    //randomly pick question from array if not already shown
-    //display question and loop through with possible answers
-    //array = Math.floor(Math.random() * questions.length)  &  pick = questions[array]??
-
-
-
     //function to loop through questions
     function questionLoop() {
         $(".theQuestions").empty();
-
 
         var showQuestion = $("<p>" + questions[i].question + "</p>");  //how to dig deeper in the array?
         showQuestion.addClass("theQuestions");
@@ -139,11 +112,9 @@ $(document).ready(function () {
             showAnswers.addClass("theAnswers");
             showAnswers.attr("Value", questions[i].answers[j]);
             showAnswers.attr("rightAnswer", questions[i].correctAnswer);
-            $("#answer-choices").append(showAnswers);
+            $("#answer-choices").append(showAnswers);    
             
-            //
         }
-
     }
 
     //when user clicks on an answer
@@ -168,11 +139,31 @@ $(document).ready(function () {
 
     });
 
+})
 
+//start screen content
+
+//when user presses start button:
+//starts a timer
+//gives a question
+//gives options(buttons)
+
+//3 options: right answer, wrong answer, run out of time(wrong answer)
 
     //start timer (function)
 
+    //timer run function
+    //if it's running then... if it's not running then...
 
+
+    //timer stop function
+    //make running false?
+    //clear the clock
+
+    //display question function 
+    //randomly pick question from array if not already shown
+    //display question and loop through with possible answers
+    //array = Math.floor(Math.random() * questions.length)  &  pick = questions[array]??
 
     //i =0
 
@@ -191,6 +182,6 @@ $(document).ready(function () {
 
     //are there anymore question to ask?  has to meet the condition of no more questions     
 
-})
+
 //when timer is up
     //lose

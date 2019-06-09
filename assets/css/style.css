@@ -1,24 +1,28 @@
 /* Homework Due 6.10.19 */
 
-/* header {
-    background-image: url("../images/cinderellaBanner.jpg")
-} */
+header {
+    background-image: url("../images/cinderellaBanner.jpg");
+    padding-bottom: 20px;
+}
 
 h1 {
     font-size: 80px;
     font-weight: 15px;
     text-align: center;
+    color: white;
     font-family: 'Princess Sofia', cursive;
 }
 
 #instructions {
-    font-size: 25px;
-    font-weight: 5px;
+    font-size: 30px;
+    font-weight: 10px;
+    color: white;
     text-align: center;
 }
 
 #start-button {
     text-align: center;
+    margin-top: 50px;
 }
 
 #timer {
