@@ -99,20 +99,20 @@ $(document).ready(function () {
 
     //function to loop through questions
     function questionLoop() {
-        $(".theQuestions").empty();
 
-        var showQuestion = $("<p>" + questions[i].question + "</p>");  //how to dig deeper in the array?
+        $(".theQuestions").empty();
+        $("#answer-choices").empty();
+        var showQuestion = $("<p>" + questions[i].question + "</p>");  
         showQuestion.addClass("theQuestions");
-        //showQuestion.attr("loopQuestions", Math.floor(Math.random() * questions.length));
         $("#trivia-questions").append(showQuestion);
 
-        $("#answer-choices").empty();
-        for (var j = 0; j < questions[i].answers.length; j++) {
+        for (var j = 0; j < questions[i].answers.length; j++) {                      
             var showAnswers = $("<button>" + questions[i].answers[j] + "</button>");
             showAnswers.addClass("theAnswers");
             showAnswers.attr("Value", questions[i].answers[j]);
             showAnswers.attr("rightAnswer", questions[i].correctAnswer);
             $("#answer-choices").append(showAnswers);    
+            
             
         }
     }
@@ -136,6 +136,8 @@ $(document).ready(function () {
             resetTimer();
             questionLoop();
         } 
+
+        
 
     });
 
