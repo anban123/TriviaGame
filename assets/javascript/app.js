@@ -90,6 +90,21 @@ $(document).ready(function () {
         decrement();
         questionLoop();
     }
+
+    //function for dancing woody
+    function woody() {
+        $(".theQuestions").empty();
+        $("#answer-choices").empty();
+
+        console.log("woody");
+        
+        var celImage = $("<img/>");
+        celImage.addClass("woody");
+        celImage.attr("../images/dancingWoody.gif");
+        $(".woody").show().delay(5000).fadeOut();
+        //$("#celebration").append(celImage);
+    }
+                           
     
     //start button click event, hides start button and instructions, starts trivia questions
     $(document).on("click", "#start-button", function () {
@@ -131,6 +146,7 @@ $(document).ready(function () {
 
         if (userGuess === rightGuess && timer > 0) {
             alert("Right Answer!")
+            woody(); 
             i++;
             resetTimer();
             questionLoop();
@@ -141,7 +157,9 @@ $(document).ready(function () {
             questionLoop();
         } 
 
-        
+        if (questions > questions.length) {
+            console.log("WOOP")
+        }
 
     });
 
