@@ -1,6 +1,6 @@
 //Homework Due 6.10.19
 
-
+//2 major issues; clock wont go away after all the q's and woody wont appear
 
 //Variables
 var correctAnswers = 0;
@@ -97,7 +97,7 @@ $(document).ready(function () {
         $("#answer-choices").empty();
 
         console.log("woody");
-        
+
         var celImage = $("<img/>");
         celImage.addClass("woody");
         celImage.attr("../images/dancingWoody.gif");
