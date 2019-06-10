@@ -64,6 +64,11 @@ $(document).ready(function () {
     }
     start();
     
+    //stop the timer
+    function timerStop () {
+        $("#timer").empty();
+    };
+
     //makes clock count down
     function decrement() {
         timer--;
@@ -112,7 +117,7 @@ $(document).ready(function () {
             showAnswers.addClass("theAnswers");
             showAnswers.attr("Value", questions[i].answers[j]);
             showAnswers.attr("rightAnswer", questions[i].correctAnswer);
-            $("#answer-choices").append(showAnswers);    
+            $("#answer-choices").append(showAnswers); 
          }
     }
 
