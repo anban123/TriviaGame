@@ -1,6 +1,6 @@
 //Homework Due 6.10.19
 
-//2 major issues; clock wont go away after all the q's, and woody wont appear
+//2 major issues; clock wont go away after all the q's, and woody wont appear (function calls but wont work), and no score.
 
 //Variables
 var correctAnswers = 0;
@@ -11,6 +11,7 @@ var timeDec;
 var userGuess = "";
 var answered = false;
 var i = 0;
+var score = 0;
 
 //trivia questions
 $(document).ready(function () {
@@ -101,8 +102,12 @@ $(document).ready(function () {
         var celImage = $("<img/>");
         celImage.addClass("woody");
         celImage.attr("../images/dancingWoody.gif");
+        $("#celebration").html(celImage);
         $(".woody").show().delay(5000).fadeOut();
-        $("#celebration").append(celImage);
+    }
+
+    function showScore() {
+        alert("Your score is " + score.val());
     }
                            
     
@@ -141,9 +146,14 @@ $(document).ready(function () {
             showAnswers.attr("rightAnswer", questions[i].correctAnswer);
             $("#answer-choices").append(showAnswers); 
 
-            // var showImage = $("<img src='questions[i]")
-         }
+        }
     }
+
+    // function showAnswerImage() {
+    // var showImage = $("<img src='questions[i].image");
+    // showImage.addClass("answerImage");
+    // $("#answer-image").html(showImage);
+    // }
 
     //when user clicks on an answer
     $("#answer-choices").on("click", ".theAnswers", function () {
@@ -156,18 +166,21 @@ $(document).ready(function () {
             i++;
 
             if (userGuess === rightGuess && timer > 0) {
-                alert("Right Answer!")
+                score++;
+                alert("Right Answer! You have " + score.valueOf() + " correct answers!")
                 woody(); 
                 resetTimer();
                 questionLoop();
             } else if (userGuess != rightGuess && timer > 0) {
-                alert("Wrong Answer!");
+                alert("Wrong Answer! You have " + score.valueOf() + " correct answers!");
                 resetTimer();
                 questionLoop();
             } 
         } else {
             console.log("WOOP")
         }
+
+        
 
     });
 
