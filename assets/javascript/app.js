@@ -64,6 +64,11 @@ $(document).ready(function () {
         $("#start-button").append(startButton);
     }
     start();
+
+    //create score in header
+    // var showScoreScore = $("<div>");
+    // showScoreScore.attr(score.valueOf());
+    // $("#score").html(showScoreScore);
     
     //stop the timer
     function timerStop () {
@@ -132,6 +137,7 @@ $(document).ready(function () {
             console.log("hitting the if")
             clearInterval(timeDec);
             $("#timer").empty();
+            alert("You got " + score.valueOf() + " answers right!")
             return;
         }
 
@@ -167,12 +173,12 @@ $(document).ready(function () {
 
             if (userGuess === rightGuess && timer > 0) {
                 score++;
-                alert("Right Answer! You have " + score.valueOf() + " correct answers!")
+                alert("Right Answer!")
                 woody(); 
                 resetTimer();
                 questionLoop();
             } else if (userGuess != rightGuess && timer > 0) {
-                alert("Wrong Answer! You have " + score.valueOf() + " correct answers!");
+                alert("Wrong Answer");
                 resetTimer();
                 questionLoop();
             } 
