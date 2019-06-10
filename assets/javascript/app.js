@@ -1,6 +1,6 @@
 //Homework Due 6.10.19
 
-//2 major issues; clock wont go away after all the q's and woody wont appear
+//2 major issues; clock wont go away after all the q's, and woody wont appear
 
 //Variables
 var correctAnswers = 0;
@@ -17,7 +17,7 @@ $(document).ready(function () {
 
     var questions = [                   //declare an object, inside objects are key value pairs
         {
-            question: "In Peter Pan, Captain Hook had a hook on which one of his hands?",   //question[0].question
+            question: "In Peter Pan, Captain Hook had a hook on which one of his hands?",   //questions[0].question
             answers: ["left", "right"],
             correctAnswer: "left",
             image: "assets/images/captainHook.jpg"
@@ -102,7 +102,7 @@ $(document).ready(function () {
         celImage.addClass("woody");
         celImage.attr("../images/dancingWoody.gif");
         $(".woody").show().delay(5000).fadeOut();
-        //$("#celebration").append(celImage);
+        $("#celebration").append(celImage);
     }
                            
     
@@ -122,6 +122,13 @@ $(document).ready(function () {
 
         $(".theQuestions").empty();
         $("#answer-choices").empty();
+        
+        if (i >= questions.length) {
+            console.log("hitting the if")
+            clearInterval(timeDec);
+            $("#timer").empty();
+            return;
+        }
 
         var showQuestion = $("<p>" + questions[i].question + "</p>");  
         showQuestion.addClass("theQuestions");
@@ -133,6 +140,8 @@ $(document).ready(function () {
             showAnswers.attr("Value", questions[i].answers[j]);
             showAnswers.attr("rightAnswer", questions[i].correctAnswer);
             $("#answer-choices").append(showAnswers); 
+
+            // var showImage = $("<img src='questions[i]")
          }
     }
 
@@ -143,21 +152,20 @@ $(document).ready(function () {
 
         var userGuess = $(this).attr('Value');
         var rightGuess = $(".theAnswers").attr("rightAnswer");
-
-        if (userGuess === rightGuess && timer > 0) {
-            alert("Right Answer!")
-            woody(); 
+        if (i < questions.length) {
             i++;
-            resetTimer();
-            questionLoop();
-        } else if (userGuess != rightGuess && timer > 0) {
-            alert("Wrong Answer!");
-            i++;
-            resetTimer();
-            questionLoop();
-        } 
 
-        if (questions > questions.length) {
+            if (userGuess === rightGuess && timer > 0) {
+                alert("Right Answer!")
+                woody(); 
+                resetTimer();
+                questionLoop();
+            } else if (userGuess != rightGuess && timer > 0) {
+                alert("Wrong Answer!");
+                resetTimer();
+                questionLoop();
+            } 
+        } else {
             console.log("WOOP")
         }
 
