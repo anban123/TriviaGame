@@ -1,7 +1,5 @@
 //Homework Due 6.10.19
 
-//2 major issues; clock wont go away after all the q's, and woody wont appear (function calls but wont work), and no score.
-
 //Variables
 var correctAnswers = 0;
 var wrongAnswers = 0;
@@ -39,22 +37,19 @@ $(document).ready(function () {
             question: "What was the name of the elephant Dumbo was based off of?",
             answers: ["Bob", "Barnum", "Tuft", "Jumbo"],
             correctAnswer: "Jumbo",                       //super sad story :(
-            image: "assets/images/jumbo.jpg"                     //lots of appending
-
+            image: "assets/images/jumbo.jpg"                     
         },
         {
             question: "What was the first fairy tale that Walt Disney made a cartoon about?",
             answers: ["Little Red Riding Hood", "Bambi", "Little Mermaid", "Snow White"],
             correctAnswer: "Little Red Riding Hood",
             image: "assets/images/lrrh.jpg"
-
         },
         {
             question: "What was the name of the whale in Pinocchio?",
             answers: ["Samuel", "Gigantor", "Monstro", "Willy"],
             correctAnswer: "Monstro",
             image: "assets/images/whale.jpg"
-
         }
     ]
 
@@ -115,7 +110,6 @@ $(document).ready(function () {
         alert("Your score is " + score.val());
     }
                            
-    
     //start button click event, hides start button and instructions, starts trivia questions
     $(document).on("click", "#start-button", function () {
         $("#start-button").hide();
@@ -123,8 +117,6 @@ $(document).ready(function () {
         timeDec = setInterval(decrement, 1000);
         decrement();
         questionLoop();
-        
-        
     });
 
     //function to loop through questions
@@ -185,54 +177,5 @@ $(document).ready(function () {
         } else {
             console.log("WOOP")
         }
-
-        
-
     });
-
 })
-
-//start screen content
-
-//when user presses start button:
-//starts a timer
-//gives a question
-//gives options(buttons)
-
-//3 options: right answer, wrong answer, run out of time(wrong answer)
-
-    //start timer (function)
-
-    //timer run function
-    //if it's running then... if it's not running then...
-
-
-    //timer stop function
-    //make running false?
-    //clear the clock
-
-    //display question function 
-    //randomly pick question from array if not already shown
-    //display question and loop through with possible answers
-    //array = Math.floor(Math.random() * questions.length)  &  pick = questions[array]??
-
-    //i =0
-
-
-
-    //if/else for each question
-    //if they get right answer
-    //tell them its a correct answer, maybe with picture
-    //go to next question
-    //if they get wrong answer
-    //tell them they're wrong
-    //go to next question
-    //if timer is up
-    //tell them they are wrong
-    //go to next question 
-
-    //are there anymore question to ask?  has to meet the condition of no more questions     
-
-
-//when timer is up
-    //lose
