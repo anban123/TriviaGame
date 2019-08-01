@@ -12,7 +12,7 @@ var i = 0;
 var score = 0;
 
 //trivia questions
-$(document).ready(function () {
+$(document).ready(function () { 
 
     var questions = [                   //declare an object, inside objects are key value pairs
         {
@@ -178,4 +178,9 @@ $(document).ready(function () {
             console.log("WOOP")
         }
     });
+})
+
+$(".reset").on("click", function() {
+    console.log("reset button clicked");
+    window.reload();
 })

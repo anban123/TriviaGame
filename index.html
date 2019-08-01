@@ -17,7 +17,7 @@
     <!--Link to jquery-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-</head>
+</head> 
 <body>
     
     <header>
@@ -29,7 +29,9 @@
         
     </header>
     
-    <div id="start-button"></div>
+    <div id="start">
+        <input type="image" src="assets/images/start-button.jpg" id="start-button" />
+    </div>
     
     <div>
         <div id="timer"></div>
@@ -43,8 +45,14 @@
         <div id="answer-image"></div>
         
     </div>
+
     
-    <div id="celebration"></div>  
+    
+    <div id="celebration"></div> 
+    
+    <footer id="footer">
+        <a href="javascript:location.reload(true)" id="refresh">Restart the Trivia Game!</a>
+    </footer>
 
     <!--Link to js-->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
