@@ -167,11 +167,11 @@ $(document).ready(function () {
                 score++;
                 alert("Right Answer!")
                 woody(); 
-                resetTimer();
+                // resetTimer();
                 questionLoop();
             } else if (userGuess != rightGuess && timer > 0) {
                 alert("Wrong Answer");
-                resetTimer();
+                // resetTimer();
                 questionLoop();
             } 
         } else {
